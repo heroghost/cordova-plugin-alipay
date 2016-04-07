@@ -13,6 +13,9 @@
 
 @interface CDVAlipay : CDVPlugin
 
+#define PARTNER @""
+#define RSA_PRIVATE @""
+#define RSA_PUBLIC @""
 
 @property(nonatomic,strong)NSString *partner;
 @property(nonatomic,strong)NSString *rsa_private;

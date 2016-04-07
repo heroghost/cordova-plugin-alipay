@@ -18,6 +18,6 @@ public final class PayKeys {
 	public static final String PRIVATE = "";
 
 	// 支付宝默认公钥 请勿修改
-	public static final String PUBLIC = "":
+	public static final String PUBLIC = "";
 
 }

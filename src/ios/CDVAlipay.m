@@ -30,9 +30,9 @@
 
 -(void)pluginInitialize{
     CDVViewController *viewController = (CDVViewController *)self.viewController;
-    self.partner = [viewController.settings objectForKey:@"partner"];
-    self.rsa_private = [viewController.settings objectForKey:@"rsa_private"];
-    self.rsa_public = [viewController.settings objectForKey:@"rsa_public"];
+    self.partner = PARTNER;
+    self.rsa_private = RSA_PRIVATE;
+    self.rsa_public = RSA_PUBLIC;
 }
 
 
@@ -67,9 +67,9 @@
     NSString *body = orderInfoArgs[@"body"];
     NSString *price = orderInfoArgs[@"price"];
     NSString *tradeNo = orderInfoArgs[@"tradeNo"];
-    NSString *timeout = orderInfoArgs[@"timeout"];
+    NSString *timeout = @"3m";
     NSString *notifyUrl = orderInfoArgs[@"notifyUrl"];
-    NSString *seller = orderInfoArgs[@"seller"];
+    //NSString *seller = orderInfoArgs[@"seller"];
     
     /*
      *生成订单信息及签名
@@ -77,7 +77,7 @@
     //将商品信息赋予AlixPayOrder的成员变量
     AlipayOrder *order = [[AlipayOrder alloc] init];
     order.partner = self.partner;
-    order.seller = seller;
+    order.seller = self.partner;
     order.tradeNO = tradeNo; //订单ID（由商家自行制定）
     order.productName = subject; //商品标题
     order.productDescription = body; //商品描述
